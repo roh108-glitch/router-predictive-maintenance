@@ -1,0 +1,13 @@
+# Python cache files created when code runs
+__pycache__/
+*.pyc
+
+# Notebook checkpoint files
+.ipynb_checkpoints/
+
+# Virtual environment folders (if you create one)
+venv/
+.venv/
+
+# All data files: keep them off GitHub until the NDA check is done
+data/

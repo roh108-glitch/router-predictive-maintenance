@@ -1,0 +1,141 @@
+{
+    "data_path": "data/cleaned_router_telemetry_dataset.csv",
+    "target_column": "isolate_required",
+    "random_state": 42,
+    "train_shape": [
+        2396,
+        16
+    ],
+    "validation_shape": [
+        299,
+        16
+    ],
+    "holdout_shape": [
+        300,
+        16
+    ],
+    "numeric_columns": [
+        "cpu_percent",
+        "memory_percent",
+        "heap_percent",
+        "temperature_c",
+        "fan_speed_rpm",
+        "power_draw_w",
+        "interface_error_count",
+        "packet_drop_rate",
+        "latency_ms",
+        "uptime_hours",
+        "alarm_count"
+    ],
+    "categorical_columns": [
+        "vendor",
+        "router_model",
+        "slot_id",
+        "card_status",
+        "link_status"
+    ],
+    "best_model_name": "XGBClassifier",
+    "best_params": {
+        "model": "XGBClassifier",
+        "model__colsample_bytree": 1.0,
+        "model__learning_rate": 0.01,
+        "model__max_depth": 5,
+        "model__n_estimators": 200,
+        "model__subsample": 1.0
+    },
+    "best_cv_score": 0.47906736329825367,
+    "validation_metrics_default_threshold": {
+        "accuracy": 0.8160535117056856,
+        "precision": 0.38666666666666666,
+        "recall": 0.7631578947368421,
+        "f1_score": 0.5132743362831859,
+        "confusion_matrix": [
+            [
+                215,
+                46
+            ],
+            [
+                9,
+                29
+            ]
+        ],
+        "roc_auc": 0.8781004234724743,
+        "pr_auc": 0.5988166688497649
+    },
+    "best_validation_threshold_for_f1": {
+        "threshold": 0.65,
+        "accuracy": 0.9096989966555183,
+        "precision": 0.72,
+        "recall": 0.47368421052631576,
+        "f1_score": 0.5714285714285714
+    },
+    "best_validation_threshold_with_precision_constraint": {
+        "threshold": 0.6,
+        "accuracy": 0.8896321070234113,
+        "precision": 0.5641025641025641,
+        "recall": 0.5789473684210527,
+        "f1_score": 0.5714285714285714
+    },
+    "validation_metrics_tuned_threshold": {
+        "accuracy": 0.9096989966555183,
+        "precision": 0.72,
+        "recall": 0.47368421052631576,
+        "f1_score": 0.5714285714285714,
+        "confusion_matrix": [
+            [
+                254,
+                7
+            ],
+            [
+                20,
+                18
+            ]
+        ],
+        "roc_auc": 0.8781004234724743,
+        "pr_auc": 0.5988166688497649,
+        "threshold": 0.65
+    },
+    "holdout_metrics_default_threshold": {
+        "accuracy": 0.81,
+        "precision": 0.3783783783783784,
+        "recall": 0.717948717948718,
+        "f1_score": 0.49557522123893805,
+        "confusion_matrix": [
+            [
+                215,
+                46
+            ],
+            [
+                11,
+                28
+            ]
+        ],
+        "roc_auc": 0.8691914726397484,
+        "pr_auc": 0.6151028478410814
+    },
+    "holdout_metrics_tuned_threshold": {
+        "accuracy": 0.8933333333333333,
+        "precision": 0.64,
+        "recall": 0.41025641025641024,
+        "f1_score": 0.5,
+        "confusion_matrix": [
+            [
+                252,
+                9
+            ],
+            [
+                23,
+                16
+            ]
+        ],
+        "roc_auc": 0.8691914726397484,
+        "pr_auc": 0.6151028478410814,
+        "threshold": 0.65
+    },
+    "selected_threshold_for_inference": 0.65,
+    "class_balance": {
+        "train_positive_rate": 0.12813021702838062,
+        "validation_positive_rate": 0.12709030100334448,
+        "holdout_positive_rate": 0.13
+    }
+}
